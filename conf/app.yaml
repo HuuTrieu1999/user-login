@@ -1,0 +1,9 @@
+mongodb:
+  uri: mongodb://localhost:27017
+  db-name: cake
+  collection: user
+
+secret-key: abc@123
+server:
+  http:
+    port: 8080
