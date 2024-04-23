@@ -33,7 +33,7 @@ func (u userService) Register(request request.RegisterRequest) *response2.Respon
 	if request.Password == "" {
 		return u.createFailedResponse(error_code.InvalidPasswordError, error_code.InvalidPasswordMsg)
 	}
-	if request.Birthday == "" {
+	if request.Birthday == "" || !isValidBirthday(request.Birthday) {
 		return u.createFailedResponse(error_code.InvalidBirthdayError, error_code.InvalidBirthdayMsg)
 	}
 
@@ -73,4 +73,9 @@ func (u userService) Register(request request.RegisterRequest) *response2.Respon
 			Birthday:    user.Birthday,
 		},
 	})
+}
+
+func isValidBirthday(birthday string) bool {
+	_, err := time.Parse("2006-01-02", birthday)
+	return err == nil
 }
