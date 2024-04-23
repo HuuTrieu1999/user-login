@@ -83,7 +83,7 @@ RegisterDataResponse
 | user.PhoneNumber | string |                    |
 | user.Birthday    | string | format: yyyy-mm-dd |
 
-## How can the system server 100000 concurrent user?
+## How can the system serve 100000 concurrent user?
 
 * JWT - Stateless Authentication: the system uses JWT Authentication mechanism. It is a stateless Authentication so we can easily scale out the number of instance of our service.
 * Index: email/phone/username are indexed so that it makes the query faster.
