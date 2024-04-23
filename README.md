@@ -3,6 +3,8 @@
 ## Overview
 This document outlines the design and development of a highly scalable login and user creation system for a mobile application. The system is engineered to handle a significant user base, specifically targeting 100,000 concurrent users.
 
+This project uses the hexagonal architecture. Referrence: https://en.wikipedia.org/wiki/Hexagonal_architecture_(software) 
+
 ## System Design
 
 <img src="./asset/login.drawio.png">
@@ -85,7 +87,7 @@ RegisterDataResponse
 
 * JWT - Stateless Authentication: the system uses JWT Authentication mechanism. It is a stateless Authentication so we can easily scale out the number of instance of our service.
 * Index: email/phone/username are indexed so that it makes the query faster.
-* MongoDB: support cluster mode and partition.
+* MongoDB: support cluster mode and partitioning.
 
 
 
