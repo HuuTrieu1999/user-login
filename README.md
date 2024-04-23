@@ -27,24 +27,58 @@ Index:
 
 ## API Spec
 
-POST: /api/login
+BaseResponse
 
-request
+| Field        | Type   | Description     | 
+|:-------------|:-------|:----------------| 
+| status       | bool   | success or fail | 
+| errorCode    | string | error code      |
+| errorMessage | string | error message   |
+| data         | string | data json       |
 
-| Field    | Type   | Description          | 
-|:---------|:-------|:---------------------| 
-| account  | string | email/phone/username | 
-| password | string | password             |
+**POST: /api/login**
 
-response
-
-
-
-POST: /api/register
+Request
 
 | Field    | Type   | Description          | 
 |:---------|:-------|:---------------------| 
 | account  | string | email/phone/username | 
 | password | string | password             |
+
+LoginDataResponse
+
+| Field            | Type   | Description        | 
+|:-----------------|:-------|:-------------------| 
+| token            | string | jwt                | 
+| user.UserID      | string |                    |
+| user.UserName    | string |                    |
+| user.FullName    | string |                    |
+| user.Email       | string |                    |
+| user.PhoneNumber | string |                    |
+| user.Birthday    | string | format: yyyy-mm-dd |
+
+**POST: /api/register**
+
+Request
+
+| Field       | Type    | Description        | 
+|:------------|:--------|:-------------------| 
+| userName    | string  |                    |
+| fullName    | string  |                    |
+| email       | string  |                    |
+| phoneNumber | string  |                    |
+| birthday    | string  | format: yyyy-mm-dd | 
+| password    | string  | password           |
+
+RegisterDataResponse
+
+| Field            | Type   | Description        | 
+|:-----------------|:-------|:-------------------|
+| user.UserID      | string |                    |
+| user.UserName    | string |                    |
+| user.FullName    | string |                    |
+| user.Email       | string |                    |
+| user.PhoneNumber | string |                    |
+| user.Birthday    | string | format: yyyy-mm-dd |
 
 
