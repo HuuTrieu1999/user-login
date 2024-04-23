@@ -10,6 +10,7 @@ import (
 	"login/internal/core/dto"
 	"login/internal/core/entity"
 	"login/internal/core/entity/error_code"
+	"time"
 )
 
 func (u userService) Register(request request.RegisterRequest) *response2.Response {
@@ -50,6 +51,8 @@ func (u userService) Register(request request.RegisterRequest) *response2.Respon
 		PhoneNumber:  request.PhoneNumber,
 		HashPassword: string(hashPasswordBytes),
 		Birthday:     request.Birthday,
+		CreatedDate:  time.Now(),
+		UpdatedDate:  time.Now(),
 	}
 	err = u.userRepo.Insert(user)
 	if err != nil && mongo.IsDuplicateKeyError(err) {
