@@ -3,7 +3,7 @@
 ## Overview
 This document outlines the design and development of a highly scalable login and user creation system for a mobile application. The system is engineered to handle a significant user base, specifically targeting 100,000 concurrent users.
 
-This project uses the hexagonal architecture. Referrence: https://en.wikipedia.org/wiki/Hexagonal_architecture_(software) 
+This project uses the hexagonal architecture. Reference: https://en.wikipedia.org/wiki/Hexagonal_architecture_(software) 
 
 ## System Design
 
